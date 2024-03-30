@@ -1,0 +1,44 @@
+@charset "utf-8";
+
+/* 버거킹 : 공통 CSS - common.css */
+
+
+
+
+
+
+body *{
+  /* outline: 1px dashed #999; */
+}
+
+
+
+
+h1,h2,h3,h4,h5,h5{
+  font-family: 'Black Han Sans', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
+
+}
+
+
+
+
+body{
+  /* height: 3000px; */
+}
+
+
+
+
+/* --------------- 섹션 ----------------- */
+
+
+.section{
+
+  /* height: 100vh; */
+
+}
+
+
+/* 섹션 높이갚이 오토여야 아래를 밀어주는듯 > 수정? */
+

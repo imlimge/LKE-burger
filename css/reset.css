@@ -1,0 +1,27 @@
+@charset "utf-8";
+
+/* 카이로스 수학학원 사이트 - 리셋 css */
+/* 기본 초기화 셋팅 */
+
+
+
+html,
+body,
+h1, h2, h3, h4, h5, h6,
+ul, ol, dl, dt, dd, p,
+figure, figcaption
+{
+  margin: 0;
+  padding: 0;
+}
+
+
+ul, ol, li{
+  list-style: none;
+  
+}
+
+
+a{
+  text-decoration: none;
+}

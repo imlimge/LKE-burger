@@ -1,0 +1,1688 @@
+@charset "utf-8";
+/* 버거킹 : 메인페이지 CSS - main.css */
+
+
+@import url(./reset.css);
+@import url(./sub01.css);
+@import url(./common.css);
+@import url(./core.css);
+@import url(./ani.css);
+
+
+
+/*********************** 네비게이션************************/
+
+
+
+.gnb-box{
+  
+  position: sticky;
+  top: 40px;
+  max-width: 80%;
+  margin: 47px auto;
+  z-index: 999;
+}
+
+.gnb-box .on{
+  animation:  gnb-box-ani 1s ease-in-out 2.5s forwards;
+}
+
+.gnb{
+ 
+  height: 70px;
+  display: flex;
+
+  box-shadow: 3px 3px 5px #35262680;
+  border-radius: 30px;
+
+}
+
+
+.gnb a{
+  color: #fff;
+  font-weight: bold;
+  font-size: min(1.2rem,1.4vw);
+  /* font-size: 1.2rem; */
+  white-space : nowrap;
+  display:block;
+
+}
+
+/* 메뉴 호버 시 글자색 변경 */
+.gnb a:hover{
+  color:rgba(255, 255, 255, 0.882);
+
+}
+
+
+.gnb-box li{
+display: inline-block;
+flex: 1;
+background-color: #d0021b;
+text-align: center;
+line-height: 72.7px;
+font-family: 'Cafe24Ssurround';
+}
+
+
+/* 
+메뉴사이 선을 만들었는데 위치 고정 어려움
+
+왼쪽 메뉴 사이 선
+.gnb>li:nth-child(n+1):nth-child(-n+2)::after{
+  content: '';
+  position: relative;
+  display: inline-block;
+  height: 67px;
+  border-left: 1px solid #ffffff3d;
+  left: 83.7px;
+  top: -71.9px;
+
+}
+
+오른쪽 메뉴 사이 선
+.gnb>li:nth-child(n+6):nth-child(-n+7)::after{
+  content: '';
+  position: relative;
+  display: inline-block;
+  height: 67px;
+  border-left: 1px solid #ffffff3d;
+  left: -83.7px;
+  top: -71.9px;
+}
+
+ */
+
+
+/* 메뉴 3번째 5번째 여백 */
+.gnb>li:nth-child(3) a{
+  margin-right: 30px;
+}
+.gnb>li:nth-child(5) a{
+  margin-left: 30px;
+}
+
+
+
+/* 메뉴 호버 시 배경색 변경 */
+.gnb-box li:hover{
+background-color:#b10215;
+
+transition:.2s ease-in;
+}
+
+
+/* 메뉴 딜리버리 왼쪽 움직이는 아이콘 */
+.gnb>li:last-child>a::after{
+  content: '';
+    position: relative;
+    display: inline-block;
+    right: 0;
+    bottom: -13px;
+
+ 
+    width: 35px;
+    height: 35px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(../images/01.top-navigation/online-ordering-animation.gif);
+ 
+}
+
+
+
+/* 메뉴 딜리버리 왼쪽 움직이는 아이콘 호버시 이미지 변경 */
+.gnb>li:last-child:hover>a::after{
+  background-image: url(../images/01.top-navigation/online-ordering-animation-hover.gif);
+  transition: all .3s;
+}
+
+
+
+
+.gnb-box li:first-child{
+
+  border-radius: 30px 0 0 30px;
+
+}
+.gnb-box li:nth-child(3){
+
+flex: 1.3;
+
+}
+.gnb-box li:nth-child(4){
+
+flex: .2;
+
+}
+.gnb-box li:nth-child(5){
+
+flex: 1.3;
+
+}
+.gnb-box li:last-child{
+  
+  border-radius: 0 30px 30px 0;
+
+}
+.gnb-box li:last-child{
+  
+  border-radius: 0 30px 30px 0;
+
+}
+
+
+
+.nav-logo {
+position: absolute;
+top: calc(50% -  90px/2);
+left: calc(50% - 90px/2);
+width: 90px;
+height: 90px;
+background-color: #d0021b;
+text-align: center;
+border-radius: 10px;
+box-shadow: 3px 3px 7px #35262680;
+transition: .5s; 
+
+}
+
+
+.nav-logo:hover {
+transition: .3s ease-in-out;
+
+transform: scale(1.2);
+
+
+}
+
+
+.nav-logo img{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 80%
+
+}
+
+
+/***************** 모바일 네비게이션 ***********************/
+
+.m-gnb-box{
+  position: sticky;
+  top: 0;
+  height: 60px;
+  width: 100%;
+  background-color: #d0021b;
+  z-index: 999;
+}
+
+
+
+.m-hamburger{
+ 
+}
+
+.m-hamburger img{
+  position: absolute;
+  top: calc(50% - 25px/2);
+  left: 3%;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  /* background: url(../images/01.top-navigation/m-hamburger.png) no-repeat center/cover; */
+  
+}
+
+.m-delivery{
+  position: absolute;
+  top: calc(50% - 36px/2);
+  right: 2%;
+  width: 100px;
+  height: 36px;
+  text-align: center;
+
+
+}
+
+.m-delivery a{
+  display: inline-block;
+  font-family: 'Cafe24Ssurround';
+  color: #fff;
+  font-size: 1rem;
+  margin-top: -11.2px;
+}
+  
+
+
+/* 메뉴 딜리버리 왼쪽 움직이는 아이콘 */
+.m-delivery>a:after{
+  content: '';
+    position: relative;
+    display: inline-block;
+    right: 0;
+    bottom: -12px;
+
+ 
+    width: 35px;
+    height: 35px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(../images/01.top-navigation/online-ordering-animation.gif);
+ 
+}
+
+
+
+
+
+
+
+.m-nav-logo{
+position: absolute;
+top: calc(50% - 50px/2);
+left: calc(50% - 50px/2);
+width: 50px;
+height: 50px;
+text-align: center;
+
+}
+
+.m-nav-logo img{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 80%
+
+}
+
+/*********************** 모바일 서브 ************************/
+
+
+
+.m-snb-box{
+  position: absolute;
+  z-index: 999;
+  
+ 
+}
+
+.m-snb-box{
+
+  
+}
+
+
+.m-snb-box.on::before{
+  content: '';
+  position: absolute;
+  top: -60px;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(0 0 0 / 51%);
+  
+}
+
+
+/* 모바일 서브메뉴 */
+.sub-menu{
+  position: fixed;
+  top: -60px;
+  height: calc(100% + 60px);
+  width: 80vw;
+  background-color: #d0021b;
+  left: -120%;
+ 
+  transition: .5s ease;
+}
+
+.sub-menu.on{
+
+ left:0;
+
+}
+
+
+.sub-menu-outbox{
+  width: 100%;
+  height: 100%;
+  padding: 15vw 7vh;
+  box-sizing: border-box;
+}
+
+.sub-menu-inbox{
+  width: 100%;
+  height: 100%;
+  top: 60px;
+  position: relative;
+}
+
+
+
+/* 서브메뉴 클로즈 버튼 */
+.sub-menu-close{
+  cursor: pointer;
+  height: 17vw;
+}  
+
+
+.sub-menu-close img{
+  width: 26px;
+}
+
+
+
+
+
+/* 서브메뉴 리스트 */
+.sub-menu-list {
+  position: relative;
+  height: 85%;
+  margin-top: 3vh;
+}
+
+
+.sub-menu-title{
+  display: inline-block;
+  font-family: 'Cafe24Ssurround';
+  font-size: min(4.7vw,2.3rem);
+  color: #fff;
+
+}
+
+.sub-menu-list>ul::after{
+  content: '';
+  width: 100%;
+  display: inline-block;
+  border-bottom:1px solid #a50505 ;
+  margin: 4vw 0;
+
+}
+
+.sub-menu-open-btn{
+right: 0;
+
+
+
+}
+
+
+
+.sub-menu-open-btn img{
+  cursor: pointer;
+  transition: .2s ease-out;
+  right: 0;
+  position: absolute;
+  transform: scale(0.5) translateY(-145%);
+}
+
+.sub-menu-open-btn.on img{
+  transform: scale(0.5) translateY(-145%) rotate(90deg);
+  transition: .3s ease-out;
+}
+
+
+
+.sub-menu-open{
+  height: 0;
+  overflow: hidden;
+  transition: height .5s ease-out;
+}
+
+.sub-menu-open.on{
+
+}
+
+
+.sub-menu-open-list{
+  display: inline-block;
+  color: #fff;
+  font-family: 'ChosunGu';
+  font-size: min(4vw,1.3rem);
+  padding: 1.7vw 0 1.7vw 4.2vw;
+}
+
+
+/*********************** 배너************************/
+
+
+/* 배너에 마우스 따라다니는 무버 */
+.mover{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  outline: 1px solid #fff;
+
+  pointer-events: none;
+
+  opacity: 0;
+
+  transition: 0.4s ease-out;
+ z-index: 999;
+}
+
+.mover span{
+  /* opacity: 0; */
+  transition: 0.4s ease-out;
+}
+
+.mover span:nth-child(1){
+  position: absolute;
+  display: inline-block;
+  color: #fff;
+  text-align: center;
+  font-size: 2rem;
+  
+
+
+
+  top: 23%;
+  left: calc(50% - 160px/2);
+  width: 160px;
+
+}
+
+.mover span:nth-child(2){
+  position: absolute;
+  display: inline-block;
+  color: #fff;
+  text-align: center;
+  font-size: .8rem;
+
+
+
+  top: 52%;
+  left: calc(50% - 160px/2);
+  width: 160px;
+
+}
+
+
+
+
+#banner{
+    /* overflow: hidden; */
+}
+
+
+
+/* 배너 파트 : 부모 */
+.banner{
+  position: relative;
+  width: 100%;
+  min-height: 61vh;    /* 슬라이드 광고이미지 -> top:0 겹치기*/
+  margin: 0px auto 10vh;
+
+
+ }
+
+
+
+
+/* 배너 동영상 */
+.banner-mv{
+position: absolute;
+width: 100%;
+height: 100vh;
+
+top: 0;
+
+overflow: hidden;
+margin: 0px auto;
+
+
+z-index: -1;
+
+}
+
+
+
+.banner-video {
+
+
+}
+
+.banner-video>video{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 100%;
+  min-height: 100%;
+}
+
+  
+
+
+
+.banner-back-color{
+  position: absolute;
+  top: 0;
+
+  /* background-color: #bb0a1f ; */
+  height: 100%;
+  width: 100%;
+  opacity: 90%;
+}
+
+
+
+
+
+
+/* 배너 글자 이미지 : 자식*/
+.banner-back{
+  position: absolute;
+  width: 80vw;
+  top: 30%;
+  left: calc(50% - 80vw/2);
+
+
+}
+ /*  
+ left: calc(50% - 80vw/2); 
+ transform-origin: center, center;  
+ >> 창 확대축소 할 때 왜 왼쪽 위에서부터 크기가 변경?*/
+
+
+
+.banner-back img{
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 30vw;
+  margin: 10% auto;
+  transition: .5s ease-in;
+  animation: banner-back-ani 2s cubic-bezier(0.1, 0.75, 0.57, 0.99) 1.7s forwards;
+ 
+  
+}
+
+.banner-back span{
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%);
+  font-family: 'RixInooAriDuriR';
+  font-weight: normal;
+  font-size: min(3rem,9vw);
+  color: #111;
+  text-align: center;
+  display: inline-block;
+}
+
+
+
+
+.banner p{
+  font-family: 'Cafe24Ssurround';
+  padding: 4vw 0;
+  font-weight: bold;
+  font-size: min(1.2rem,3vw);
+  text-align: center;
+  color: #111;
+
+}
+
+
+
+
+
+
+/**************** 배너 호버 *******************/
+
+/* .banner:hover img{
+  margin: -0.3% auto;
+  transition: .3s ease-in;
+
+}
+ */
+
+/* 배너 버거 개별 이미지 호버시 개별 이미지 조금 더 움직이기 */
+/* .banner-burgerImg:hover img{
+
+  margin: -1.5% auto;
+  transition: .5s ease-in;
+
+} */
+
+
+/* 배너 버거 이미지 호버시 개별 이미지 조금 더 움직이기
+ >> 마지막 그림자(html상으로 첫번째 있어서 n+1 (1번을 제외하고 hover를 준건데 왜 안될까)
+ */
+
+ 
+/* .banner-burgerImg>img:nth-child(n+1):hover{
+
+  margin: -3% auto;
+  transition: .5s ease-in;
+
+}
+ */
+
+
+
+
+/*********************** 슬라이드 광고 - 가로형 ************************/
+
+
+.ad-slide {
+  height: 30vw;
+  margin: -6vh 0 25vh 0;
+  position: relative;
+  right: -100%;
+ transition: right 2s;
+
+}
+
+.ad-slide.on{
+  right: 0%;
+}
+
+
+.slide-wrap{
+  position: relative;
+  top: 0;
+
+}
+
+.slide-part1{
+  position: absolute;
+  right: 0;
+ 
+
+  height: 300px;
+
+  overflow: hidden;
+
+}
+
+
+.slide-img{
+  height: 100%;
+  position: relative;
+  display: flex;
+  left:0px;
+}
+
+.slide-img-item{
+  position: relative;
+  aspect-ratio:1440/480;
+  height: 300px;
+ 
+}
+
+
+
+.slide-part2{
+  position: absolute;
+  right: 0;
+  height: 350px;
+ 
+
+
+}
+
+.slide-wrap .scroll{
+  position: absolute;
+  background-color: #d3d3d3;
+  width: 323px;
+  height: 10px;
+  bottom: 0;
+  border-radius: 10px;
+}
+
+
+.slide-wrap .scroll-move{
+  position: absolute;
+  background-color: #d0021b;
+
+  height: 10px;
+  bottom: 0;
+  border-radius: 10px;
+  cursor: pointer;
+
+
+  left:0;
+}
+
+
+
+
+
+/*********************** 슬라이드 광고 - 모바일 ************************/
+.m-slide{
+  position: relative;
+  
+}
+
+
+
+.m-slide-wrap{
+  overflow: hidden;
+}
+
+.m-slide-img{
+  display: flex;
+ 
+  
+}
+
+.m-slide-img-item{
+
+ 
+}
+
+.m-slide-img-item>a>img{
+  width: 101vw;
+  aspect-ratio: 1;
+
+ }
+
+ 
+
+
+ .swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/*********************** 광고박스 치킨 ************************/
+
+#ad-chicken{
+  position: relative;
+  height: 100%;
+  top: 0;
+  margin:10vh 0;
+  overflow: hidden;
+}
+
+/* 위치 및 배경 텍스트 넣기 위한 공간 */
+.bgbox{    
+  position: absolute;
+  height: 800px;
+  width: 100%;
+  overflow: hidden;
+}
+
+
+
+.bg-txt{
+  position: absolute;
+  font-size: 23vw;
+  line-height: 23vw;
+  bottom: 0;
+  right: 0;
+
+  color: #000;
+  text-align: right;
+  font-family: 'Black Han Sans', sans-serif; 
+  opacity: .03;
+  
+}
+
+
+
+
+/* 비디오랑 컨텐트를 나란히 하기위해 플렉스 넣은 박스 */
+.ad-inbox{
+  position: relative;
+ 
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+}
+
+
+/* 왼쪽 1/2 */
+
+.video-box{
+
+  }
+  
+
+  .video {
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+  }
+
+
+  .video video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+  }
+  
+
+
+/* 광고 비디오 커버  */
+.ad-video-cover{
+position: absolute;
+background-color: #d0021b;
+height: 100%;
+width: 100%;
+top: 0;
+
+z-index: 9999;
+}
+
+
+
+/* 광고 비디오 커버 - 덮었다가 올라감 */
+.ad-video-cover.on{
+animation: video-cover-ani 1s ease-in forwards;
+}
+
+
+
+
+/* 오른쪽 1/2 */
+ .content{
+  padding: 3vw 9vw 3vw 5vw;
+  box-sizing: border-box;
+  
+
+} 
+
+
+
+.sub-title{
+  color: #bb0a1f;
+  font-family: 'Roboto Condensed', sans-serif;
+  margin: 3vw 0 1vw 0;
+  font-weight: bold;
+  font-size: min(1.8rem,4.7vw);
+
+}
+
+.title{
+  font-family: 'RixInooAriDuriR';
+  font-weight: normal;
+  font-size: min(3.3rem,7.5vw);
+  line-height: min(3.4rem,7.8vw);
+
+  color: #111;
+  padding: 0 10% 0 0;
+
+}
+
+.article{
+  font-family: 'ChosunGu';
+  padding: 4vw 0;
+ 
+  font-weight: bold;
+  font-size: min(1.1rem,4vw);
+  line-height: 1.8rem;
+ 
+  text-align: justify;
+  /* word-break: break-all; */
+
+}
+
+.view-button{
+position: relative;   /* 일단 위에서 밀어서 버튼이 내려가려고 */
+
+color: #fff;
+text-align: center;
+background-image:url(../images/00.common/button-red.svg) ;
+display: inline-block;
+background-size: 100% 100%;
+background-repeat: no-repeat;
+background-position: top left;
+min-width: 177px;
+
+padding: 0.9rem;
+
+font-family: 'Cafe24Ssurround';
+font-weight: bold;
+font-size: 1.2rem;
+line-height: 1.55rem;
+margin: 5% 0;
+
+
+transition: .4s;
+
+}
+
+
+.view-button>a{
+  color: #fff;
+
+}
+
+.view-button:hover{
+  transform: scale(1.1);
+  transition: .4s;
+  cursor: pointer;
+}
+
+
+.use-box .view-button:hover{
+
+transform: translateX(-50%) scale(1.1);
+transition: .4s;
+cursor: pointer;
+
+}
+
+
+
+
+
+
+
+
+.h-underline{
+  display: block;
+
+}
+
+
+
+.h-underline-last-line{
+
+    border-bottom: min(7.3px,1.6vw) solid #111;
+    
+}
+
+
+ 
+/* .h-underline-last-line::after {
+    content: '';
+    bottom: 0px;
+    left: 0;
+    height: 5px;
+    border-bottom: 10px solid #111;
+    width: 100%;
+    position: absolute;
+    margin-bottom: -5px;
+}
+ */
+
+
+
+
+/*     
+
+실패한 h2타이틀에 언더라인넣기 ㅠ
+
+
+<span class="h-underline ani in-viewport">
+<span class="h-underline-last-line"> CHICKEN. </span> </span></h2>
+
+.h-underline{
+  display: block;
+  width: 100%;
+}
+
+.h-underline-last-line{
+  position: relative;
+  display: inline-block;
+}
+
+
+.letter-underline::after{
+  content: '';
+  position: absolute;
+  bottom: -0.125em;
+  left: 0;
+  width: 0;
+  height: 0.125em;
+  background: #000;
+  -webkit-transition: width .7s;
+  transition: width .7s;
+}
+
+.ani{
+  -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+
+.in-viewport{
+  -webkit-animation-duration: 0.75s;
+  animation-duration: 0.75s;
+}
+
+ */
+
+
+
+
+
+
+
+/*********************** 앱박스 공통 ************************/
+
+#ad-app{
+  
+ 
+
+}
+
+
+/* 흔들려야 하는 배경박스 나중에 오른쪽에서 왼쪽으로 이동함 */
+.app-outbox {
+  position: relative;
+  background: #d0021b;
+  overflow: hidden;
+  margin-left: auto;
+ 
+}
+
+
+.app-outbox.on{
+  animation: app-shake-ani .1s ease-out 8 alternate backwards;
+}
+
+
+
+.app-outbox:before{ 
+  content: ' shake';
+  position: absolute;
+  font-size: 17rem;
+  line-height: 16rem;
+  top: 21%;
+  left: 10px;
+ 
+  color: #000;
+  text-align: right;
+  font-family: 'Black Han Sans', sans-serif; 
+  opacity: .04;
+ 
+ 
+ }
+ 
+ 
+
+
+/* 컨텐트랑 이미지 나란히 하기위해 부모 플렉스 박스 */
+.app-inbox{ 
+  position: relative;
+ 
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  
+  
+
+}
+
+
+
+/* 왼쪽 1/2 */
+.content-02{
+
+  padding: 3vw 9vw 3vw 5vw;
+  box-sizing: border-box;;
+
+/* 
+  position: relative;
+ 
+ 
+  margin: auto 0;
+  padding: 0 5% 0 9%; */
+}
+ 
+
+/* 앱광고에만 적용되는 텍스트 색상 변경 */
+.app-inbox .title{
+color: #fff;
+}
+
+
+.app-inbox .sub-title{
+  color: #111;
+}
+
+.app-inbox .article{
+  color: #f5ebdc;
+}
+
+
+.app-inbox .h-underline-last-line{
+    
+  border-bottom: min(7.3px,1.6vw) solid #fff;
+  width: 100%;
+}
+
+
+
+.app-inbox .bg-txt{
+  right:20%;
+}
+
+
+.app-inbox .view-button{
+  background-image:url(../images/00.common/button-black.svg) ;
+ 
+}
+
+
+
+
+
+/* 오른쪽 1/2 */
+.shake-img-box{
+ position: relative;
+
+}
+
+/* 고정이미지&팝업이미지 묶음 */
+.shake-img{
+
+}
+
+
+.shake.on img{
+  animation: shake-ani .1s ease-out 8 alternate backwards;
+}
+
+
+
+/* 이미지 전체 사이즈 & 위치 조정 */
+.shake-img img{
+  position: absolute;
+  width: 25vh;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+ 
+
+}
+
+
+
+
+
+
+
+/* 나중에 등장하는 이미지 */
+.pop-img{
+
+}
+
+
+
+.pop-img img:nth-child(1){
+  opacity: 0;
+  transform: translate(53.7%, -27%);
+  width: min(69vw,42.2vh);
+}
+
+.pop-img img:nth-child(2){
+  opacity: 0;
+  transform: translate(23%, 23%);
+  width: min(97.7vw,71vh);
+  
+}
+
+.pop-img img:nth-child(3){
+  opacity: 0;
+  transform: translate(1%, -37%);
+  width: min(69.7vw,48.9vh);
+ 
+}
+.pop-img img:nth-child(4){
+  opacity: 0;
+  transform: translate(-22%, 41%);
+  width: min(78.7vw,42vh);
+  
+}
+
+
+
+.pop-img.on img:nth-child(1){
+ opacity: 100%;
+ transition: opacity .03s ease-in .1s;
+}
+.pop-img.on img:nth-child(2){
+ opacity: 100%;
+ transition: opacity .03s ease-in .2s;
+}
+.pop-img.on img:nth-child(3){
+ opacity: 100%;
+ transition: opacity .03s ease-in .3s;
+}
+.pop-img.on img:nth-child(4){
+ opacity: 100%;
+ transition: opacity .03s ease-in .4s;
+}
+
+
+
+
+
+/*********************** SNS박스  ************************/
+
+#sns{
+
+
+}
+.sns-outbox {
+  position: relative;
+  background-color: #d0021b;
+  margin: 20vh 0;
+}
+
+.sns-inbox {
+  padding: 10vh 25vh;
+
+}
+
+
+.sns-list {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+ 
+}
+
+
+.sns-item{
+  text-align: center;
+}
+
+
+
+
+
+.sns-item:hover .sns-img>img{
+  transform: scale(1.2);
+  transition: .5s ease-out ;
+}
+
+
+.cont {
+  padding: 0 2vw;
+  height: 58px;
+}
+
+
+
+.sns-tit{
+  color: #fff;
+  padding: 0.4vw 0 0.8vw 0;
+  font-size: min(1.1rem,4vw);
+}
+
+.status{
+  background-color: #fff;
+  border-radius: 20px;
+  text-align: center;
+  line-height:25px;
+  font-size: .8rem;
+  width: 100px;
+  color: #111;
+  font-weight: bold;
+}
+
+
+
+/*********************** 광고박스 와퍼 ************************/
+
+
+
+
+
+
+
+
+/*********************** 사용방법 ************************/
+
+
+#use{
+  position: relative;
+  height: 100%;
+  top: 0;
+  margin-top:20vh;
+  overflow: hidden;
+  
+}
+
+
+.use-outbox{
+
+  width: 100%;
+
+  background-color: #b3b3b3;
+
+}
+
+.use-inbox{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+}
+
+
+.use-box{
+  position: relative;
+  height: 700px;
+}
+
+
+.bg-box{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0 0 0 / 51%);
+}
+
+
+.use-cont{
+  position: relative;
+  width: 70%;
+  height: 60%;
+  margin: 2vw auto;
+ 
+}
+
+.use-img{
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+  padding: 50px 0;
+
+}
+
+
+.use-img img{
+  width: 90%;
+ 
+
+
+}
+
+
+.use-title{
+  font-family: 'Cafe24Ssurround';
+  font-weight: normal;
+  font-size: min(2.4rem,7.3vw);
+  line-height: min(3rem,8.8vw);
+  color: #fff;
+
+  text-align: center;
+  margin: 4% 0;
+ 
+}
+
+
+
+.use-cont p{
+  position: relative;
+  color: #f5ebdc;
+  font-size: min(1.1rem,4vw);
+  text-align: center;
+  font-family: 'ChosunGu';
+  line-height: 1.7rem;
+  padding: 0px 15%;
+}
+
+.use-box01{
+  background:#b10215 url(../images/03.main/07.use/use01.jpg) no-repeat center/cover;
+
+}
+
+
+.use-box02{
+  background:#ff3030 url(../images/03.main/07.use/use02.jpg) no-repeat center/cover;
+}
+
+
+.use-box .view-button{
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+/* 사용방법 1/2 커버 - 덮었다가 올라감 */
+.use-box-cover{
+  position: absolute;
+  background-color: #d0021b;
+  height: 100%;
+  width: 100%;
+  top: 0;
+
+  z-index: 9999;
+  }
+  
+  .use-box-cover.on{
+    animation: video-cover-ani .7s ease-in forwards;
+  }
+
+  
+  /* 오른쪽 1/2 - 시간차 */
+  .use-box-cover.on.delay{
+
+  animation: video-cover-ani .7s ease-in .6s forwards;
+ 
+  }
+  
+
+
+/*********************** 푸터 ************************/
+
+
+.footer{
+  width: 100%;
+  height: 200px;
+  background-color: #111;
+  padding: 5vh 0;
+
+  color: #f5ebdc;
+  font-family: 'ChosunGu';
+  font-weight: bold;
+}
+
+
+.footer-box{
+  position: relative;
+  height: 100%;
+ 
+  margin:0 5vh ;
+}
+
+
+
+.footer-menu{
+  position: absolute;
+  width: 276px;
+  height: 20px;
+  right: 0;
+ 
+
+}
+
+.footer-menu a{
+  color: #f5ebdc;
+}
+
+.footer-menu li{
+  
+  float: left;
+}
+
+.footer-menu li:nth-child(-n+2)::after{
+  content: '|';
+  margin: 0 5px;
+}
+
+
+
+.copyright{
+
+}
+
+.copyright p{
+margin: 5px 0;
+font-size: .9rem;
+font-style: normal;
+
+}
+
+.footer-logo{
+  margin: 30px 0;
+}
+
+
+
+
+
+
+/*********************** 커버 ************************/
+
+.cover{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  padding: 0 0 10% 0;
+  height: 100vw;
+  background-color: #d0021b;
+  animation: cover-ani 4s ease-in-out 1s forwards;
+
+  z-index: 999999;
+}
+
+.cover.on{
+  display: none; 
+}
+
+
+.cover span{
+  position: relative;
+  
+  font-family: 'RixInooAriDuriR';
+  color: #f5ebdc;
+  font-size: 10rem;
+  text-align: center;
+  display: inherit;
+  
+}
+
+
+
+
+/****************배너 애니메이션 *******************/
+
+/* 배너 버거 이미지 : 자식 */
+.banner-burgerImg{
+  margin: 0 auto;
+  width:80vw;  
+
+  height: 400px;
+
+}
+
+
+
+
+/* 배너 버거 이미지 개별 위치 속성 및 트랜지션 */
+.banner-burgerImg img{
+ position: relative;
+  display: block;
+  margin: 0 auto;
+  transition: .5s ease-in;
+
+}
+
+
+
+.banner-burgerImg img:nth-child(9){
+  top: -130%;
+  animation: banner-burgerImg-to-up .3s cubic-bezier(0.24, 0.96, 0.5, 1.24);
+}
+
+.banner-burgerImg img:nth-child(8){
+  top: -85.7%;
+  animation: banner-burgerImg-to-up .5s cubic-bezier(0.24, 0.96, 0.5, 1.24) ;
+}
+.banner-burgerImg img:nth-child(7){
+  top: -67.7%;
+  animation: banner-burgerImg-to-up .8s cubic-bezier(0.14, 0.82, 0.4, 1.11) ;
+}
+.banner-burgerImg img:nth-child(6){
+  top: -47.7%;
+  animation: banner-burgerImg-to-up 1s cubic-bezier(0.14, 0.82, 0.4, 1.11);
+}
+.banner-burgerImg img:nth-child(5){
+  top: -26.7%;
+    animation: banner-burgerImg-to-up 1.3s cubic-bezier(0.25, 0.84, 0.46, 1.04) ;
+}
+.banner-burgerImg img:nth-child(4){
+  top: -0.3%;
+    animation: banner-burgerImg-to-up 1.5s cubic-bezier(0.25, 0.84, 0.46, 1.04) ;
+}
+.banner-burgerImg img:nth-child(3){
+  top: 24.3%;
+    animation: banner-burgerImg-to-up 1.8s cubic-bezier(0.25, 0.84, 0.46, 1.04) ;
+}
+.banner-burgerImg img:nth-child(2){
+  top: 57.3%;
+    animation: banner-burgerImg-to-up 2s cubic-bezier(0.1, 0.64, 0.43, 0.96) ;
+}
+.banner-burgerImg img:nth-child(1){
+  top: 100%;
+  animation: banner-burgerImg-opacity s cubic-bezier(0.1, 0.64, 0.43, 0.96) ;
+   
+}
+
+
+
+
+
+
+
+
+
+.flclb {
+ 
+  display: block;
+  clear: both;
+
+}
+
+
+
+.scrollLock { overflow: hidden; }
